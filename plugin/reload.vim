@@ -31,7 +31,7 @@ endif
 if g:vim_reload_vimrc_autoreload
   augroup vim_reload_vimrc_autoreload
     autocmd!
-    autocmd * BufWritePost call reload#vimrc()
+    autocmd BufWritePost * call reload#vimrc()
   augroup END
 endif
 
@@ -42,7 +42,7 @@ endif
 if g:vim_reload_plugin_autoreload
   augroup vim_reload_plugin_autoreload
     autocmd!
-    autocmd * BufWritePost call reload#plugin()
+    autocmd BufWritePost * call reload#plugin()
   augroup END
 endif
 
