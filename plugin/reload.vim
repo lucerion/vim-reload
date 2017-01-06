@@ -3,7 +3,7 @@ if exists('g:loaded_vim_reload') || &compatible || v:version < 700
 endif
 
 if !exists('g:vim_reload_vimrc')
-  let g:vim_reload_vimrc = ['~/.vimrc', '~/.vim/vimrc']
+  let g:vim_reload_vimrc = [$MYVIMRC]
 endif
 
 if !exists('g:vim_reload_plugin')
