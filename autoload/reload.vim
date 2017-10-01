@@ -1,11 +1,19 @@
+" ==============================================================
+" Description:  Vim plugin that reloads vimrc and plugins
+" Author:       Alexander Skachko <alexander.skachko@gmail.com>
+" Homepage:     https://github.com/lucerion/vim-reload
+" Version:      1.0.0 (2017-01-06)
+" Licence:      BSD-3-Clause
+" ==============================================================
+
 func! reload#vimrc(...)
   let l:files = []
 
   if len(a:000)
     let l:files = a:000
   else
-    if len(g:vim_reload_vimrc)
-      let l:files = g:vim_reload_vimrc
+    if len(g:reload_vimrc)
+      let l:files = g:reload_vimrc
     endif
   endif
 
@@ -21,8 +29,8 @@ if !exists('s:plugin_is_used')
     if len(a:000)
       let l:dirs = a:000
     else
-      if len(g:vim_reload_plugin)
-        let l:dirs = g:vim_reload_plugin
+      if len(g:reload_plugin)
+        let l:dirs = g:reload_plugin
       endif
     endif
 
@@ -52,7 +60,7 @@ endfunc
 func! s:is_allowed(path)
   let l:is_allowed = 0
 
-  for l:pattern in g:vim_reload_plugin_allowed_files
+  for l:pattern in g:reload_plugin_allowed_files
     if a:path =~ l:pattern
       let l:is_allowed = 1
     endif
