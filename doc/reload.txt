@@ -1,0 +1,121 @@
+*vim-reload.txt*    Vim plugin that reloads vimrc and plugins
+
+Author:           Alexander Skachko <alexander.skachko@gmail.com>
+Homepage:         https://github.com/lucerion/vim-reload
+Version:          1.0.0 (2017-01-06)
+Licence:          BSD-3-Clause (see vim-reload-license)
+
+===============================================================================
+CONTENTS                                                           *vim-reload*
+
+Install                                                    |vim-reload-install|
+Commands                                                  |vim-reload-commands|
+Options                                                    |vim-reload-options|
+Changelog                                                |vim-reload-changelog|
+License                                                    |vim-reload-license|
+
+===============================================================================
+INSTALL                                                    *vim-reload-install*
+
+Vundle                                https://github.com/VundleVim/Vundle.vim
+>
+    Plugin 'lucerion/vim-reload'
+<
+Pathogen                                https://github.com/tpope/vim-pathogen
+>
+    cd ~/.vim/bundle
+    git clone https://github.com/lucerion/vim-reload
+<
+NeoBundle                             https://github.com/Shougo/neobundle.vim
+>
+    NeoBundle 'lucerion/vim-reload'
+<
+vim-plug                                 https://github.com/junegunn/vim-plug
+>
+    Plug 'lucerion/vim-reload'
+<
+Manual
+>
+    git clone https://github.com/lucerion/vim-reload
+<
+    copy all of the files into your ~/.vim directory
+
+===============================================================================
+COMMANDS                                                  *vim-reload-commands*
+
+                                                                 *:ReloadVimrc*
+
+:ReloadVimrc [{files}]
+                                                                *:ReloadPlugin*
+
+:ReloadPlugin [{directories}]
+
+===============================================================================
+OPTIONS                                                    *vim-plugin-options*
+
+                                                               *g:reload_vimrc*
+Default: [$MYVIMRC]
+
+                                                              *g:reload_plugin*
+Default: ['~/.vim']
+
+                                                    *g:reload_vimrc_autoreload*
+Default: 0
+
+                                                   *g:reload_plugin_autoreload*
+Default: 0
+
+                                                *g:reload_plugin_allowed_files*
+Default: >
+  [
+    \ '.*\/after\/.*\.vim$',
+    \ '.*\/autoload\/.*\.vim$',
+    \ '.*\/colors\/.*\.vim$',
+    \ '.*\/compiler\/.*\.vim$',
+    \ '.*\/ftdetect\/.*\.vim$',
+    \ '.*\/ftplugin\/.*\.vim$',
+    \ '.*\/indent\/.*\.vim$',
+    \ '.*\/plugin\/.*\.vim$',
+    \ '.*\/syntax\/.*\.vim$',
+    \ ]
+<
+===============================================================================
+CHANGELOG                                                *vim-reload-changelog*
+
+1.0.0 (2017-01-06)~
+
+  First version
+
+===============================================================================
+LICENSE                                                    *vim-reload-license*
+
+Copyright © 2017, Alexander Skachko
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software without
+specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+===============================================================================
+vim:tw=78:ts=4:ft=help:norl:
