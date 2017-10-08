@@ -6,7 +6,7 @@
 " Licence:      BSD-3-Clause
 " ==============================================================
 
-func! reload#vimrc(...)
+func! reload#vimrc(...) abort
   let l:files = []
 
   if len(a:000)
@@ -21,7 +21,7 @@ func! reload#vimrc(...)
 endfunc
 
 if !exists('s:plugin_is_used')
-  func! reload#plugin(...)
+  func! reload#plugin(...) abort
     let s:plugin_is_used = 1
 
     let l:dirs = []
@@ -46,14 +46,14 @@ if !exists('s:plugin_is_used')
 endif
 
 if !exists('s:plugin_is_used')
-  func! s:reload_files(files)
+  func! s:reload_files(files) abort
     for l:file in filter(s:full_paths(a:files), 'filereadable(v:val)')
       exec 'source' l:file
     endfor
   endfunc
 endif
 
-func! s:full_paths(files)
+func! s:full_paths(files) abort
   return map(a:files, 'expand(v:val)')
 endfunc
 
@@ -69,7 +69,7 @@ func! s:is_allowed(path)
   return l:is_allowed
 endfunc
 
-func! s:loaded_files()
+func! s:loaded_files() abort
   let l:lines = ''
   redir => l:lines
   silent scriptnames
@@ -80,6 +80,6 @@ func! s:loaded_files()
   return s:full_paths(l:filenames)
 endfunc
 
-func! s:loaded_filename(value)
+func! s:loaded_filename(value) abort
   return expand(matchstr(a:value, '^\s*\d\+:\s\+\zs.\+$'))
 endfunc
