@@ -11,12 +11,12 @@ if exists('g:loaded_reload') || &compatible || v:version < 700
 endif
 let g:loaded_reload = 1
 
-if !exists('g:reload_vimrc')
-  let g:reload_vimrc = [$MYVIMRC]
+if !exists('g:reload_vimrc_files')
+  let g:reload_vimrc_files = [$MYVIMRC]
 endif
 
-if !exists('g:reload_plugin')
-  let g:reload_plugin = ['~/.vim']
+if !exists('g:reload_plugin_dir')
+  let g:reload_plugin_dir = ['~/.vim']
 endif
 
 if !exists('g:reload_vimrc_autoreload')

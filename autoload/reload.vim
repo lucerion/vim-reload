@@ -12,8 +12,8 @@ func! reload#vimrc(...) abort
   if len(a:000)
     let l:files = a:000
   else
-    if len(g:reload_vimrc)
-      let l:files = g:reload_vimrc
+    if len(g:reload_vimrc_files)
+      let l:files = g:reload_vimrc_files
     endif
   endif
 
@@ -29,8 +29,8 @@ if !exists('s:plugin_is_used')
     if len(a:000)
       let l:dirs = a:000
     else
-      if len(g:reload_plugin)
-        let l:dirs = g:reload_plugin
+      if len(g:reload_plugin_dir)
+        let l:dirs = g:reload_plugin_dir
       endif
     endif
 
