@@ -41,19 +41,5 @@ if g:reload_plugin_autoreload
   augroup END
 endif
 
-if !exists('g:reload_plugin_allowed_files')
-  let g:reload_plugin_allowed_files = [
-    \ '.*\/after\/.*\.vim$',
-    \ '.*\/autoload\/.*\.vim$',
-    \ '.*\/colors\/.*\.vim$',
-    \ '.*\/compiler\/.*\.vim$',
-    \ '.*\/ftdetect\/.*\.vim$',
-    \ '.*\/ftplugin\/.*\.vim$',
-    \ '.*\/indent\/.*\.vim$',
-    \ '.*\/plugin\/.*\.vim$',
-    \ '.*\/syntax\/.*\.vim$'
-    \ ]
-endif
-
 comm! -nargs=* -complete=file ReloadVimrc call reload#vimrc(<f-args>)
 comm! -nargs=* -complete=dir ReloadPlugin call reload#plugin(<f-args>)
